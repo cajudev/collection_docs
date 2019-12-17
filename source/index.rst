@@ -56,4 +56,4 @@ Características
 Instalação
 ==========
 
-``composer require cajudev/collection "^3"``
+``composer require cajudev/collection "^2"``
