@@ -51,8 +51,9 @@ Características
 
 * Padrão PSR-4
 * Testes unitários com PHPUnit
+* Zero dependências
 
 Instalação
 ==========
 
-``composer require cajudev/collection "^4"``
+``composer require cajudev/collection "^3"``
