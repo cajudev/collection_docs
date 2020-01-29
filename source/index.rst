@@ -6,22 +6,22 @@ Bem Vindo ao Collection
    :hidden:
    :glob:
 
-   Introdução <pages/introduction>
-   Inserindo Valores <pages/inserting-values>
-   Recebendo Valores <pages/getting-values>
-   Sintaxe de Array <pages/array-sintax>
-   Sintaxe de Objeto <pages/object-sintax>
-   Notação de Ponto <pages/dot-notation>
-   Notação de Intervalo <pages/interval-notation>
-   Imprimindo o Objeto <pages/printing-object>
-   Verificando e Removendo Valores <pages/verifying-removing>
-   Iterando sobre o Objeto <pages/iterating>
-   Ordenando o Array <pages/sort>
-   Map, Filter e Reduce <pages/map-filter-reduce>
-   Operações com Conjuntos <pages/set-operations>
-   Métodos de Uso geral <pages/general-methods>
-   Métodos Estáticos <pages/static-methods>
-   Extendendo a Classe <pages/extending>
+   1. Introdução <pages/introduction>
+   2. Inserindo Valores <pages/inserting-values>
+   3. Recebendo Valores <pages/getting-values>
+   4. Sintaxe de Array <pages/array-sintax>
+   5. Sintaxe de Objeto <pages/object-sintax>
+   6. Notação de Ponto <pages/dot-notation>
+   7. Notação de Intervalo <pages/interval-notation>
+   8. Imprimindo o Objeto <pages/printing-object>
+   9. Verificando e Removendo Valores <pages/verifying-removing>
+   10. Iterando sobre o Objeto <pages/iterating>
+   11. Ordenando o Array <pages/sort>
+   12. Map, Filter e Reduce <pages/map-filter-reduce>
+   13. Operações com Conjuntos <pages/set-operations>
+   14. Métodos de Uso geral <pages/general-methods>
+   15. Métodos Estáticos <pages/static-methods>
+   16. Extendendo a Classe <pages/extending>
 
 .. image:: https://img.shields.io/packagist/v/cajudev/collection.svg
    :target: https://packagist.org/packages/cajudev/collection
