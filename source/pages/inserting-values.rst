@@ -1,9 +1,9 @@
-====================
-2. Inserindo valores
-====================
+===================
+2. Inserting values
+===================
 
-2.1 Inserindo valores ao final do array
----------------------------------------
+2.1 Inserting values ​​at the end of the array
+--------------------------------------------
 
 .. raw:: php
    
@@ -11,7 +11,7 @@
    
    highlight_string('<?php function push(string ...$values): self');
 
-O método ``push()`` aceita um número variável de argumentos e serve para adicionar (empurrar) valores ao final do array.
+The ``push()`` method takes a variable number of arguments and is used to add values ​​to the end of the array.
 
 .. code:: php
 
@@ -37,10 +37,10 @@ O método ``push()`` aceita um número variável de argumentos e serve para adic
          )
    */
 
-2.2 Inserindo valores no início do array
-----------------------------------------
+2.2 Inserting values ​​at the beginning of the array
+--------------------------------------------------
 
-O método ``unshift()`` aceita um número variável de argumentos e serve para adicionar valores no início do array
+The ``unshift()`` method takes a variable number of arguments and is used to add values ​​at the beginning of the array
 
 .. code:: php
 
@@ -66,11 +66,11 @@ O método ``unshift()`` aceita um número variável de argumentos e serve para a
          )
    */
 
-2.3 Associando valores à chaves
--------------------------------
+2.3 Associating values ​​with keys
+--------------------------------
 
-O método ``set()`` é usado para associar uma chave à um valor.
-Ele também suporta a notação de ponto descrita na seção 5.
+The `` set () `` method is used to associate a value with a key.
+It also supports the dot notation described in section 5.
 
 .. code:: php
 
@@ -90,7 +90,7 @@ Ele também suporta a notação de ponto descrita na seção 5.
          )
    */
 
-Realizando a associação de maneira multidimensional:
+Performing the association in a multidimensional way:
 
 .. code:: php
 
@@ -118,10 +118,10 @@ Realizando a associação de maneira multidimensional:
          )
    */
 
-2.4 Inserindo dados por referência
-----------------------------------
+2.4 Inserting data by reference
+-------------------------------
 
-O método ``setByReference()`` permitir atribuir por referência um conteúdo à classe.
+The ``setByReference()`` method allows you to assign content to the class by reference.
 
 .. code:: php
 
@@ -146,11 +146,11 @@ O método ``setByReference()`` permitir atribuir por referência um conteúdo à
          )
    */
 
-2.5 Inserindo outro Collection
-------------------------------
+2.5 Inserting another Collection
+--------------------------------
 
-Você irá reparar que se nós inserirmos um objeto Collection dentro de outro, 
-ele não será inserido como um objeto, mas sim como um array. Isso é uma característica dessa classe.
+You will notice that if we insert a Collection object inside another one,
+it will not be inserted as an object, but as an array. This is a characteristic of this class.
 
 .. code:: php
 
