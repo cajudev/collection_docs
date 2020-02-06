@@ -1,27 +1,27 @@
-=======================
-Bem Vindo ao Collection
-=======================
+==========
+Collection
+==========
 
 .. toctree::
    :hidden:
    :glob:
 
-   1. Introdução <pages/introduction>
-   2. Inserindo Valores <pages/inserting-values>
-   3. Recebendo Valores <pages/getting-values>
-   4. Sintaxe de Array <pages/array-sintax>
-   5. Sintaxe de Objeto <pages/object-sintax>
-   6. Notação de Ponto <pages/dot-notation>
-   7. Notação de Intervalo <pages/interval-notation>
-   8. Imprimindo o Objeto <pages/printing-object>
-   9. Verificando e Removendo Valores <pages/verifying-removing>
-   10. Iterando sobre o Objeto <pages/iterating>
-   11. Ordenando o Array <pages/sort>
-   12. Map, Filter e Reduce <pages/map-filter-reduce>
-   13. Operações com Conjuntos <pages/set-operations>
-   14. Métodos de Uso geral <pages/general-methods>
-   15. Métodos Estáticos <pages/static-methods>
-   16. Extendendo a Classe <pages/extending>
+   1. Introduction <pages/introduction>
+   2. Inserting values <pages/inserting-values>
+   3. Getting values <pages/getting-values>
+   4. Array sintax <pages/array-sintax>
+   5. Objeto sintax <pages/object-sintax>
+   6. Dot notation<pages/dot-notation>
+   7. Interval notation <pages/interval-notation>
+   8. Printing the object <pages/printing-object>
+   9. Verifying and removing values <pages/verifying-removing>
+   10. Iterating over the object <pages/iterating>
+   11. Sorting values <pages/sort>
+   12. Map, Filter and Reduce <pages/map-filter-reduce>
+   13. Set operations <pages/set-operations>
+   14. Miscellaneous <pages/miscellaneous>
+   15. Static Methods <pages/static-methods>
+   16. Inheritance <pages/inheritance>
 
 .. image:: https://img.shields.io/packagist/v/cajudev/collection.svg
    :target: https://packagist.org/packages/cajudev/collection
@@ -44,16 +44,16 @@ Bem Vindo ao Collection
 .. image:: https://img.shields.io/github/contributors/cajudev/collection.svg
    :target: https://github.com/cajudev/collection/graphs/contributors
 
-Tornando sua programação em php mais orientada à objetos
+A complete library to work with arrays in php
 
-Características
-===============
+Features
+========
 
-* Padrão PSR-4
-* Testes unitários com PHPUnit
-* Zero dependências
+* Respect PSR-1, PSR-2 e PSR-4
+* High coverage of tests
+* Zero third party dependencies
 
-Instalação
-==========
+Installation
+============
 
 ``composer require cajudev/collection "^2"``

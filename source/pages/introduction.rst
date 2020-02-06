@@ -1,17 +1,17 @@
-=============
-1. Introdução
-=============
+===============
+1. Introduction
+===============
 
-1.1 Analisando a estrutura da classe
-------------------------------------
+1.1 Analyzing the class structure
+---------------------------------
 
-Esta classe possui dois atributos: ``content``, e ``length``.
+This class has two attributes: ``content``, and ``length``.
 
-Ambos possuem visibilidade ``protected``, permitindo com que você use herança caso necessite.
+Both have ``protected`` visibility, allowing you to use inheritance if you need to.
 
-O atributo ``content`` armazena todo o conteúdo adicionado ao objeto, enquanto 
-o atributo ``length``, armazena o tamanho atual do array, tornando
-desnecessário o uso de funções como ``count()``.
+The ``content`` attribute stores all values added to the object, while
+the ``length`` attribute, stores the current size of the array, making
+unnecessary the use of the function ``count()``.
 
 .. code:: php
 
@@ -32,10 +32,10 @@ desnecessário o uso de funções como ``count()``.
       )
    */
 
-1.2 Criando uma instância a partir de um array
-----------------------------------------------
+1.2 Creating an instance from an array
+--------------------------------------
 
-Você pode inicializar o objeto passando um array para o seu construtor.
+You can initialize the object by passing an array to the constructor
 
 .. code:: php
 
@@ -59,11 +59,11 @@ Você pode inicializar o objeto passando um array para o seu construtor.
          )
    */
 
-1.3 Criando uma instância a partir de outro Collection
-------------------------------------------------------
+1.3 Creating an instance from another Collection
+------------------------------------------------
 
-Você também pode sem problemas passar como argumento um objeto desta classe
-para o construtor, ele será convertido internamente.
+You can also easily pass an object of this class as an argument
+for the constructor, it will be converted.
 
 .. code:: php
 
@@ -91,13 +91,13 @@ para o construtor, ele será convertido internamente.
          )
    */
 
-1.4 Criando uma instância a partir de outros objetos
-----------------------------------------------------
+1.4 Creating an instance from other objects
+-------------------------------------------
 
-Outros objetos passados por parâmetro serão tratados de forma especial,
-sendo parseados internamente.
+Other objects passed by parameter will be treated in a special way,
+being parsed internally.
 
-Observe que a visibilidade dos atributos não afeta o parseamento.
+Note that the visibility of attributes does not affect parsing.
 
 .. code:: php
 
