@@ -1,11 +1,11 @@
-===================
-4. Sintaxe de Array
-===================
+===============
+4. Array Sintax
+===============
 
-É possível manipular esta classe com a sintaxe de array ``$array[$key]``.
+It is possible to manipulate this class with the array syntax ``$array[$key]``.
 
-4.1 Inserindo valores
----------------------
+4.1 Setting values
+------------------
 
 .. code:: php
 
@@ -13,39 +13,49 @@
 
    $collection = new Collection();
    $collection['lorem'] = 'ipsum';
+   $collection['sit']['amet'] = 'consectetur';
    $collection[] = 'dolor';
 
    print_r($collection);
 
    /*
     Cajudev\Collection Object
-        (
-            [content:protected] => Array
-                (
-                    [lorem] => ipsum
-                    [0] => dolor
-                )
-            [length:Cajudev\Collection:protected] => 2
-        )
+    (
+        [content:protected] => Array
+            (
+                [lorem] => ipsum
+                [sit] => Array
+                    (
+                        [amet] => consectetur
+                    )
+
+                [0] => dolor
+            )
+
+        [length:protected] => 3
+    )
    */
 
-4.2 Acessando valores
----------------------
+4.2 Getting values
+------------------
 
-Para acessar uma chave anteriormente setada, basta fazer como o de costume:
+To access a previously set key, just do as usual:
 
 .. code:: php
 
    $collection = new Collection();
 
    $collection['lorem'] = 'ipsum';
+   $collection['sit']['amet'] = 'consectetur';
 
    echo $collection['lorem']; // ipsum
+   echo $collection['sit']['amet']; // consectetur
 
-Diferentemente do método ``get`` que nos retorna ``null`` em casos de chave inexistente tornando não
-necessário o uso de verificações, a sintaxe de array requer um pequeno cuidado.
+Unlike the ``get`` method that returns ``null`` in cases of non-existent key,
+the array syntax requires a little care.
 
-Caso você tente acessar uma posição inexistente, essa posição será inicializada como um array.
+If you try to access a non-existent position, that position will be initialized as an array.
+This occurs to allow chained access with this sintax.
 
 .. code:: php
 
@@ -70,13 +80,12 @@ Caso você tente acessar uma posição inexistente, essa posição será inicial
       )
    */
 
-
-Nesses casos sempre verifique antes utilizando o método ``isset()``, ou o operador de coalescência ``??``.
+In such cases always check the existence of a key using the ``isset()`` method, or the coalescence operator ``??``.
 
 .. code:: php
 
    $collection = new Collection();
 
-   echo $array->isset('lorem') ? $array['lorem'] : null; // null
+   echo $collection->isset('lorem') ? $collection['lorem'] : null; // null
 
-   echo $array['lorem'] ?? null; // null
+   echo $collection['lorem'] ?? null; // null

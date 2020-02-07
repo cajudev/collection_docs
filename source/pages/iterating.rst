@@ -1,11 +1,11 @@
-===========================
-10. Iterando sobre o Objeto
-===========================
+=============================
+10. Iterating over the object
+=============================
 
-10.1 Iterando em um laço for-each
----------------------------------
+10.1 Iterating with a for-each loop
+-----------------------------------
 
-A utilização da classe em um laço for-each é a mesma a de um array comum
+The use of this class in a for-each loop is the same as when you use a common array
 
 .. code:: php
 
@@ -17,42 +17,48 @@ A utilização da classe em um laço for-each é a mesma a de um array comum
         // ...
    }
 
-10.2 Iterando com o método each
--------------------------------
+10.2 Iterating with the each method
+-----------------------------------
 
-O método ``each()`` performa um loop for-each internamente através de uma função callback.
+The ``each()`` method performs a for-each loop internally through a callback function.
 
-10.2.1 Percorrendo o objeto
-...........................
+Note that the arguments are passed to the callbacks dynamically depending on the number of arguments requested.
 
-Neste primeiro caso o valor será fornecido como um array comum.
+10.2.1 Iterating all content
+............................
 
 .. code:: php
 
    $collection = new Collection(['lorem' => ['ipsum', 'dolor', 'sit']]);
 
-   $collection->each(function($key, $value) {
-        echo gettype($value); // array
+   $collection->each(function($value) {
+        // ...
    });
 
-Mas podemos alterar esse comportamento para que o valor fornecido seja um Collection.
+   $collection->each(function($key, $value) {
+        // ...
+   });
+
+    $collection->each(function($self, $key, $value) {
+        // ...
+   });
+
+The second parameter defines when the injected value will be an array or an collection:
 
 .. code:: php
 
     $collection->each(function($key, $value) {
-        echo get_class($value); // Cajudev\Collection;
-    }, Collection::ARRAY_TO_COLLECTION);
-
-        // ou 
+        echo get_type($value); // array
+    }, false);
 
     $collection->each(function($key, $value) {
         echo get_class($value); // Cajudev\Collection;
     }, true);
    
-10.2.2 Parando a iteração
-.........................
+10.2.2 Stopping the iteration
+.............................
 
-Para pular uma iteração basta utilizar um ``return``.
+To skip an iteration just use a ``return``.
 
 .. code:: php
 
@@ -67,12 +73,10 @@ Para pular uma iteração basta utilizar um ``return``.
         echo $value . ' ';    // 0 1 2
     });
 
-10.3 Iterando em um laço while
-------------------------------
+10.3 Iterating with a while loop
+--------------------------------
 
-O objeto responsável por iterar entre os valores dessa classe é o ``CollectionIterator``.
-
-No exemplo abaixo, vocẽ poderá observar sua utilização em um laço while.
+The object responsible for iterating between the values ​​of this class is the ``CollectionIterator``.
 
 .. code:: php
 
@@ -83,51 +87,27 @@ No exemplo abaixo, vocẽ poderá observar sua utilização em um laço while.
 
    $iterator = $collection->getIterator();
 
-    while ($iterator->valid()) { // verifica se a posição atual é válida
+    while ($iterator->valid()) { // check if the position id valid
 
-        echo "key {$iterator->key()}"; //acessa a chave da posição atual
+        echo "key {$iterator->key()}"; // get current key
 
-        echo "value: {$iterator->current()}"; //acessa o valor da posição atual
+        echo "value: {$iterator->current()}"; // get current value
         
-        $iterator->next(); // avança para a próxima posição
+        $iterator->next(); // go to the next position
     }
 
-    $iterator->previous(); //retorna uma posição
-    $iterator->rewind(); // retorna ao inicio
+    $iterator->previous(); // return to the previous position
+    $iterator->rewind(); // return to the beginning
 
-10.4 Iterando com o método for
-------------------------------
+10.4 Iterating with the for method
+----------------------------------
 
-O método ``for()`` permite iterar um objeto Collection através de passos.
+The ``for()`` method allows iterating over a Collection object in steps.
 
-Ele recebe três argumentos: O ponto de partida, o incremento e uma função que recebe chave e valor.
+It takes three arguments: The starting point, the increment, and a callback function
 
-10.4.1 Iterando "para frente"
-.............................
-
-.. code:: php
-
-    use Cajudev\Collection;
-
-    $collection = new Collection();
-
-    $collection->push('lorem', 'ipsum', 'dolor', 'sit', 'amet', 'consectetur');
-
-    $collection->for(0, 2, function($key, $value) {
-        echo "key: {$key} value: {$value}" . PHP_EOL;
-    });
-
-   /*
-        key: 0 value: lorem
-        key: 2 value: dolor
-        key: 4 value: amet
-   */
-
-10.4.2 Iterando "para trás"
-...........................
-
-Caso você queira iterar inversamente o objeto, basta informar como
-segundo argumento um valor negativo.
+10.4.1 Iterating forward
+........................
 
 .. code:: php
 
@@ -137,92 +117,67 @@ segundo argumento um valor negativo.
 
     $collection->push('lorem', 'ipsum', 'dolor', 'sit', 'amet', 'consectetur');
 
-    $collection->for(3, -1, function($key, $value) {
-        echo "key: {$key} value: {$value}" . PHP_EOL;
+    $collection->for($start = 0, $step = 2, function($value) {
+        // ...
     });
 
-    /*
-        key: 3 value: sit
-        key: 2 value: dolor
-        key: 1 value: ipsum
-        key: 0 value: lorem
-    */   
+    $collection->for($start = 0, $step = 2, function($key, $value) {
+        // ...
+    });
 
-Tome o cuidado de não informar um valor inválido, como no exemplo abaixo:
+    $collection->for($start = 0, $step = 2, function($self, $key, $value) {
+        // ...
+    });
+
+10.4.2 Iterating backward
+.........................
+
+If you want to iterate the object inversely, just pass to the second argument a negative value.
+
+.. code:: php
+
+    use Cajudev\Collection;
+
+    $collection = new Collection();
+
+    $collection->push('lorem', 'ipsum', 'dolor', 'sit', 'amet', 'consectetur');
+
+    $collection->for($start = 3, $step = -1, function($key, $value) {
+        // ...
+    });
+
+Take care not to enter an invalid value, as in the example below:
 
 .. code:: php
 
     $collection->push('lorem', 'ipsum', 'dolor', 'sit', 'amet', 'consectetur');
 
+    // Undefined offset: 7
     $collection->for(7, -1, function($key, $value) {
         echo "key: {$key} value: {$value}" . PHP_EOL;
     });
 
-    // Undefined offset: 7
-
-Assim como o método ``each``, o valor fornecido por padrão (caso seja um array) será um array comum.
-Para alterar esse comportamento, você pode informar um segundo parâmetro.
+The second parameter defines when the injected value will be an array or an collection:
 
 .. code:: php
 
-    $collection = new Collection([['lorem', 'ipsum'], ['dolor', 'sit']]);
+    $collection->for($start = 0, $step = 2, function($value) {
+        echo get_type($value); // array
+    }, false);
 
-    $collection->for(0, 2, function($key, $value) {
-        echo get_class($value); // Cajudev\Collection;
-    }, Collection::ARRAY_TO_COLLECTION);
-
-        // ou 
-
-    $collection->for(0, 2, function($key, $value) {
+    $collection->for($start = 0, $step = 2, function($value) {
         echo get_class($value); // Cajudev\Collection;
     }, true);
 
-10.4.3 Realizando modificações
-..............................
+10.5 Iterating recursively
+--------------------------
 
-Caso você necessite fazer modificações internas ao invés de somente obter dados,
-você precisará adicionar um ``use`` passando o próprio objeto:
+The ``walk()`` method allows you to recursively walk all the elements of the object.
 
-.. code:: php
+10.5.1 Iterating over leaves
+............................
 
-    use Cajudev\Collection;
-
-    $collection = new Collection();
-
-    $collection->push('lorem', 'ipsum', 'dolor', 'sit', 'amet', 'consectetur');
-
-    $collection->for(0, 2, function($key, $value) use ($collection) {
-        $collection[$key] = 'Hello World';
-    });
-
-    print_r($collection);
-
-    /*
-        Cajudev\Collection Object
-        (
-            [content:protected] => Array
-                (
-                    [0] => Hello World
-                    [1] => ipsum
-                    [2] => Hello World
-                    [3] => sit
-                    [4] => Hello World
-                    [5] => consectetur
-                )
-                
-            [length:Cajudev\Collection:protected] => 
-        )
-    */
-
-10.5 Iterando recursivamente
-----------------------------
-
-O método ``walk()`` permite percorrer recursivamente todos os elementos do objeto.
-
-10.5.1 Percorrendo folhas
-.........................
-
-O modo padrão deste método é LEAVES_ONLY, ou seja, percorre apenas nós-folha, como no exemplo abaixo:
+The default mode for this method is LEAVES_ONLY, that is, it only travels through leaf nodes.
 
 .. code:: php
 
@@ -230,84 +185,51 @@ O modo padrão deste método é LEAVES_ONLY, ou seja, percorre apenas nós-folha
 
     $collection = new Collection(['lorem', ['ipsum', 'dolor'], ['sit' => ['amet' => 'consectetur']]]);
 
+    $collection->walk(function($value) {
+        // ...
+    });
+    
     $collection->walk(function($key, $value) {
-        var_dump($key, $value);
+        // ...
     });
 
-    /*
-        int(0)
-        string(5) "lorem"
+    $collection->walk(function($self, $key, $value) {
+        // ...
+    });
 
-        int(0)
-        string(5) "ipsum"
+10.5.2 Other modes
+..................
 
-        int(1)
-        string(5) "dolor"
+Four constants of the class `` RecursiveIteratorIterator`` can be passed as the second parameter of this method.
 
-        string(4) "amet"
-        string(11) "consectetur"
-    */
-
-10.5.2 Demais modos
-...................
-
-Quatro constantes da classe ``RecursiveIteratorIterator`` podem ser passadas como segundo parâmetro desse método.
-
-São elas: ``LEAVES_ONLY``, ``SELF_FIRST``, ``CHILD_FIRST`` e ``CATCH_GET_CHILD``.
-
-Veja o mesmo exemplo anterior, porém desta vez utilizando outro modo.
+They are: ``LEAVES_ONLY``, ``SELF_FIRST``, ``CHILD_FIRST`` and ``CATCH_GET_CHILD``.
 
 .. code:: php
 
-    $collection->walk(function($key, $value) {
-        var_dump($key, $value);
+    $collection->walk(function($value) {
+        // ...
+    }, RecursiveIteratorIterator::LEAVES_ONLY);
+
+    $collection->walk(function($value) {
+        // ...
+    }, RecursiveIteratorIterator::SELF_FIRST);
+
+    $collection->walk(function($value) {
+        // ...
     }, RecursiveIteratorIterator::CHILD_FIRST);
 
-    /*
-        int(0)
-        string(5) "lorem"
+    $collection->walk(function($value) {
+        // ...
+    }, RecursiveIteratorIterator::CATCH_GET_CHILD);
 
-        int(0)
-        string(5) "ipsum"
-
-        int(1)
-        string(5) "dolor"
-
-        int(1)
-        array(2) {
-            [0] => string(5) "ipsum"
-            [1] => string(5) "dolor"
-        }
-
-        string(4) "amet"
-        string(11) "consectetur"
-
-        string(3) "sit"
-        array(1) {
-            'amet' => string(11) "consectetur"
-        }
-
-        int(2)
-        array(1) {
-            'sit' => array(1) {
-                'amet' => string(11) "consectetur"
-            }
-        }
-    */
-
-Assim como os métodos anteriores, o valor fornecido por padrão (caso seja um array) será um array comum.
-Para alterar esse comportamento, você pode informar um terceiro parâmetro.
+The third parameter defines when the injected value will be an array or an collection:
 
 .. code:: php
 
-    $collection = new Collection([['lorem', 'ipsum'], ['dolor', 'sit']]);
+    $collection->walk(function($value) {
+        echo get_type($value); // array
+    }, RecursiveIteratorIterator::LEAVES_ONLY, false);
 
-    $collection->walk(function($key, $value) {
-        // ...
-    }, RecursiveIteratorIterator::CHILD_FIRST, Collection::ARRAY_TO_COLLECTION);
-
-        // ou 
-
-    $collection->walk(function($key, $value) {
-        // ...
-    }, RecursiveIteratorIterator::CHILD_FIRST, true);
+    $collection->walk(function($value) {
+        echo get_class($value); // Cajudev\Collection;
+    }, RecursiveIteratorIterator::LEAVES_ONLY, true);

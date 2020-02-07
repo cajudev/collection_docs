@@ -1,11 +1,11 @@
 ======================
-8. Imprimindo o Objeto
+8. Printing the Object
 ======================
 
-Ao tentarmos utilizar construtores de linguagem como ``echo`` ou ``print`` em um objeto, 
-um erro é emitido pelo php, pois o mesmo não sabe como tratar esse retorno. 
+When trying to use language constructors like ``echo`` or ``print`` on an object,
+php language throws an error, as it does not know how to handle this.
 
-Felizmente em nosso caso retornamos o conteúdo do array interno em formato JSON.
+Fortunately in our case, we returned the contents of the internal content in JSON format.
 
 .. code:: php
 

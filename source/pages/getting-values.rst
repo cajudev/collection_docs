@@ -1,10 +1,10 @@
-====================
-3. Recebendo Valores
-====================
+=================
+3. Getting Values
+=================
 
-O método ``get()`` permite acessar posições no objeto.
+The ``get()`` method allows accessing positions in the object.
 
-Considere o objeto abaixo para todos os exemplos desta página:
+Consider the object below for all the examples on this page:
 
 .. code:: php
 
@@ -16,8 +16,8 @@ Considere o objeto abaixo para todos os exemplos desta página:
        'dolor' => ['sit' => 'amet']
     ]);
 
-3.1 Acesso simples
-------------------
+3.1 Simple access
+-----------------
 
 .. code:: php
 
@@ -27,8 +27,8 @@ Considere o objeto abaixo para todos os exemplos desta página:
 
     // ================================================================================================================ //
 
-3.2 Acesso encadeado
---------------------
+3.2 Chained access
+------------------
 
 .. code:: php
 
@@ -38,8 +38,8 @@ Considere o objeto abaixo para todos os exemplos desta página:
 
     // ================================================================================================================ //
 
-3.3 Acesso à múltiplos valores
-------------------------------
+3.3 Access multiple values
+--------------------------
 
 .. code:: php
 
@@ -49,8 +49,8 @@ Considere o objeto abaixo para todos os exemplos desta página:
 
     // ================================================================================================================ //
 
-3.4 Acesso multidimensional por notação de ponto
-------------------------------------------------
+3.4 Multidimensional access using dot notation
+----------------------------------------------
 
 .. code:: php
 
@@ -60,84 +60,24 @@ Considere o objeto abaixo para todos os exemplos desta página:
 
     // ================================================================================================================ //
 
-3.5 Tentativa de acesso à uma chave inválida
---------------------------------------------
+3.5 Attempting to access an invalid key
+---------------------------------------
 
 .. code:: php
 
     // ================================================================================================================ //
 
-        $collection->get('invalid'); // null (nenhum erro gerado)
+        $collection->get('invalid'); // null (don't worry no errors will be generated)
     
     // ================================================================================================================ //
 
-3.6 Acesso total
------------------
+3.6 Access all content
+----------------------
 
 .. code:: php
 
     // ================================================================================================================ //  
 
         $collection->get(); // ['lorem', 'ipsum', 'dolor' => ['sit' => 'amet']]
-
-    // ================================================================================================================ //
-
-3.7 Acesso ao tamanho do array
-------------------------------
-
-.. code:: php
-
-    // ================================================================================================================ //
-   
-        echo $collection->length; // 3
-
-    // ================================================================================================================ //
-
-
-3.8 Como é possível acessar métodos de maneira encadeada?
----------------------------------------------------------
-
-Qualquer array desse objeto, imediatamente ao ser acessado se transformará em um objeto collection, fornecendo todos os
-seus métodos.
-
-.. code:: php
-
-    // ================================================================================================================ //
-
-    print_r($collection);
-
-    /*
-    Cajudev\Collection Object
-        (
-            [content:protected] => Array
-                (
-                    [0] => lorem
-                    [ipsum] => consectetur
-                    [dolor] => Array       -----------> Aqui 'dolor' ainda é um array comum
-                        (
-                            [sit] => amet
-                        )
-
-                )
-
-            [length:protected] => 3
-        )
-    */
-
-    $dolor = $collection->get('dolor');  //  -------------> Ao ser acessado, é transformado em Collection
-
-    print_r($dolor);
-
-    /*
-    Cajudev\Collection Object
-        (
-            [content:protected] => Array
-                (
-                    [sit] => amet
-                )
-
-            [length:protected] => 1
-        )
-    */
 
     // ================================================================================================================ //

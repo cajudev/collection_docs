@@ -1,15 +1,15 @@
-===================
-6. Notação de Ponto
-===================
+===============
+6. Dot Notation
+===============
 
-Uma característica muito interessante que essa classe possui é a possibilidade
-de navegar entre seu conteúdo utilizando a notação de ponto.
+A very interesting feature of this library is the possibility
+to navigate between your content using dot notation.
 
-6.1 Inserindo valores
----------------------
+6.1 Setting values
+------------------
 
-Para criar collections multidimensionais facilmente, sem a utilização de milhares de colchetes,
-basta realizar a atribuição com a notação de ponto, como no exemplo abaixo:
+To create multidimensional collections easily, without using thousands of square brackets,
+just perform the assignment with dot notation, as in the example below:
 
 .. code:: php
 
@@ -41,22 +41,22 @@ basta realizar a atribuição com a notação de ponto, como no exemplo abaixo:
    */
 
 
-6.2 Acessando valores
----------------------
+6.2 Getting values
+------------------
 
-Da mesma forma, é possível facilmente percorrer o objeto para acessar seu conteúdo.
+Likewise, it is very easy getting values of any dimension
 
 .. code:: php
    
-   // Navegando entre os valores
+   // Navigating between values
 
    echo $collection['lorem.ipsum.1.sit.amet']; // dolor
 
-   // Também é possível misturar as sintaxes se assim o preferir.
+   // It is also possible to mix the syntax if you prefer.
 
    echo $collection['lorem.ipsum'][1]['sit.amet']; //dolor
 
 .. note::
 
-   Diversos métodos também suportam essa notação, como **get**, **set**, **isset**, **empty**, entre outros.
-   Todos estão descritos nessa documentação.
+   Several methods also support this notation, such as **get**, **set**, **isset**, **empty**, among others.
+   All are described in this documentation.

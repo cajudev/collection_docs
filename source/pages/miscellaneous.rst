@@ -1,11 +1,11 @@
-========================
-14. Métodos de Uso Geral
-========================
+=================
+14. Miscellaneous
+=================
 
 14.1 First
 ----------
 
-Retorna o primeiro elemento do array (A partir da versão 3, não reinicia mais o ponteiro)
+Returns the first element of the array (restart the pointer)
 
 .. code:: php
 
@@ -18,7 +18,7 @@ Retorna o primeiro elemento do array (A partir da versão 3, não reinicia mais 
 14.2 Last
 ---------
 
-Retorna o último elemento do array (A partir da versão 3, não reinicia mais o ponteiro)
+Returns the last element of the array (restart the pointer)
 
 .. code:: php
 
@@ -31,7 +31,7 @@ Retorna o último elemento do array (A partir da versão 3, não reinicia mais o
 14.3 Shift
 ----------
 
-Remove o primeiro elemento do array retornando o elemento removido (reinicia o ponteiro)
+Remove and returns the first element of the array (restart the pointer)
 
 .. code:: php
 
@@ -46,7 +46,7 @@ Remove o primeiro elemento do array retornando o elemento removido (reinicia o p
 14.4 Pop
 --------
 
-Remove o último elemento do array retornando o elemento removido (reinicia o ponteiro)
+Remove and returns the last element of the array (restart the pointer)
 
 .. code:: php
 
@@ -61,10 +61,10 @@ Remove o último elemento do array retornando o elemento removido (reinicia o po
 14.5 Count
 ----------
 
-Retorna a quantidade de elementos do array. 
+Calculate the length of the collection
 
-Não há necessidade de utilizar esse método (exceto em modo recursivo)
-visto que o atributo length armazena o tamanho atual do array.
+There is no need to use this method (except in recursive mode)
+since the length attribute stores the current size of the array.
 
 .. code:: php
 
@@ -83,7 +83,7 @@ visto que o atributo length armazena o tamanho atual do array.
 14.6 Keys
 ---------
 
-Retorna um objeto contento as chaves do array atual
+Returns an object containing the keys of the current collection
 
 .. code:: php
 
@@ -98,7 +98,7 @@ Retorna um objeto contento as chaves do array atual
 14.7 Values
 -----------
 
-Retorna um objeto contento os valores do array atual
+Returns an object containing the values of the current array
 
 .. code:: php
 
@@ -113,7 +113,8 @@ Retorna um objeto contento os valores do array atual
 14.8 Chunk
 ----------
 
-Quebra o array em partes iguais. Caso receba ``true`` como segundo parâmetro preservará as chaves do array.
+Split the array into equal parts. If it receives ``true`` as a second parameter
+it will preserve the array keys.
 
 .. code:: php
 
@@ -152,7 +153,7 @@ Quebra o array em partes iguais. Caso receba ``true`` como segundo parâmetro pr
 14.9 Join
 ----------
 
-Junta os elementos do array em uma string.
+Join all elements in a string.
 
 .. code:: php
 
@@ -167,7 +168,7 @@ Junta os elementos do array em uma string.
 14.10 Column
 ------------
 
-Retorna um objeto contento os valores da coluna informada.
+Returns a new object with the values of a given column.
 
 .. code:: php
 
@@ -185,7 +186,7 @@ Retorna um objeto contento os valores da coluna informada.
 14.11 Lower
 -----------
 
-Altera recursivamente as chaves do array para minúsculo.
+Recursively change the object keys to lowercase.
 
 .. code:: php
 
@@ -198,7 +199,7 @@ Altera recursivamente as chaves do array para minúsculo.
 14.12 Upper
 -----------
 
-Altera recursivamente as chaves do array para maiúsculo.
+Recursively change the object keys to uppercase.
 
 .. code:: php
 
@@ -211,7 +212,7 @@ Altera recursivamente as chaves do array para maiúsculo.
 14.13 Contains
 --------------
 
-Checa se determinado valor existe no array
+Checks whether a value exists in the collection
 
 .. code:: php
 
@@ -224,7 +225,7 @@ Checa se determinado valor existe no array
 14.14 Sum
 ---------
 
-Soma os elementos do array
+Sum all elements of the collection
 
 .. code:: php
 
@@ -236,8 +237,8 @@ Soma os elementos do array
 14.15 Flip
 ----------
 
-Inverte as relações do array, ou seja, as chaves 
-passam a ser os valores e os valores passam a ser as chaves.
+Inverts the array relations, that is, the keys
+become the values ​​and the values ​​become the keys.
 
 .. code:: php
 
@@ -249,7 +250,7 @@ passam a ser os valores e os valores passam a ser as chaves.
 14.16 Search
 ------------
 
-Procura por um valor no array e se o encontra, retorna sua chave correspondente.
+Searches for a value in the array and if it finds it, returns its corresponding key.
 
 .. code:: php
 
@@ -262,7 +263,7 @@ Procura por um valor no array e se o encontra, retorna sua chave correspondente.
 14.17 Reverse
 -------------
 
-Inverte o array.
+Returns the inverse of the collection.
 
 .. code:: php
 
@@ -274,7 +275,7 @@ Inverte o array.
 14.18 Unique
 ------------
 
-Remove valores duplicados.
+Remove duplicated values.
 
 .. code:: php
 
@@ -286,7 +287,7 @@ Remove valores duplicados.
 14.19 Merge
 -----------
 
-Mescla todas as dimensões do array
+Merge all elements of the collection
 
 .. code:: php
 
@@ -303,7 +304,7 @@ Mescla todas as dimensões do array
 14.20 Coalesce
 --------------
 
-Retorna o primeiro valor não nulo
+Returns the first non null value
 
 .. code:: php
 
@@ -316,7 +317,7 @@ Retorna o primeiro valor não nulo
 14.21 Random
 ------------
 
-Retorna um elemento aleatório
+Returns a random element of the collection.
 
 .. code:: php
 
@@ -329,7 +330,7 @@ Retorna um elemento aleatório
 14.22 Shuffle
 -------------
 
-Embaralha os valores do objeto
+Shuffle the collection values.
 
 .. code:: php
 

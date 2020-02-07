@@ -1,25 +1,12 @@
-=====================
-15. Métodos Estáticos
-=====================
+==================
+15. Static Methods
+==================
 
-15.1 isCollection
------------------
-
-Verifica se dado objeto é uma instância da classe Collection ou que extenda dela
-
-.. code:: php
-
-   use Cajudev\Collection;
-
-   Collection::isCollection(new Collection()); // true
-
-   Collection::isCollection(10); // false
-
-15.2 Combine
+15.1 Combine
 -------------
 
-Combina dois arrays/objetos em um novo objeto, utilizando o primeiro para chaves e o segundo para valores.
-Ambos os argumentos podem ser simples arrays ou objetos dessa classe.
+Combines two arrays / objects in a new object, using the first for keys and the second for values.
+Both arguments can be simple arrays or collections.
 
 .. code:: php
 
@@ -33,10 +20,10 @@ Ambos os argumentos podem ser simples arrays ou objetos dessa classe.
 
    echo $result; // {"lorem":1,"ipsum":2,"dolor":3}
 
-15.3 Range
+15.2 Range
 -------------
 
-Cria um objeto collection a partir de um intervalo
+Creates a collection object from a given range
 
 .. code:: php
 

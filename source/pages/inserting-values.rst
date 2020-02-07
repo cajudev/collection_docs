@@ -70,7 +70,7 @@ The ``unshift()`` method takes a variable number of arguments and is used to add
 --------------------------------
 
 The `` set () `` method is used to associate a value with a key.
-It also supports the dot notation described in section 5.
+It also supports the dot notation described in section 6.
 
 .. code:: php
 
@@ -156,9 +156,9 @@ it will not be inserted as an object, but as an array. This is a characteristic 
 
    use Cajudev\Collection;
 
-   $collection = new Collection(['primeiro' => new Collection(['lorem', 'ipsum', 'dolor'])]);
+   $collection = new Collection(['first' => new Collection(['lorem', 'ipsum', 'dolor'])]);
 
-   $collection->set('segundo', new Collection(['lorem', 'ipsum', 'dolor']));
+   $collection->set('second', new Collection(['lorem', 'ipsum', 'dolor']));
 
    print_r($collection);
 
@@ -167,14 +167,14 @@ it will not be inserted as an object, but as an array. This is a characteristic 
       (
          [content:protected] => Array
             (
-               [primeiro] => Array
+               [first] => Array
                   (
                      [0] => lorem
                      [1] => ipsum
                      [2] => dolor
                   )
 
-               [segundo] => Array
+               [second] => Array
                   (
                      [0] => lorem
                      [1] => ipsum

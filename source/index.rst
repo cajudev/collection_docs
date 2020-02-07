@@ -10,18 +10,17 @@ Collection
    2. Inserting values <pages/inserting-values>
    3. Getting values <pages/getting-values>
    4. Array sintax <pages/array-sintax>
-   5. Objeto sintax <pages/object-sintax>
+   5. Object sintax <pages/object-sintax>
    6. Dot notation<pages/dot-notation>
    7. Interval notation <pages/interval-notation>
    8. Printing the object <pages/printing-object>
    9. Verifying and removing values <pages/verifying-removing>
    10. Iterating over the object <pages/iterating>
    11. Sorting values <pages/sort>
-   12. Map, Filter and Reduce <pages/map-filter-reduce>
+   12. Map, Find, Filter and Reduce <pages/map-find-filter-reduce>
    13. Set operations <pages/set-operations>
    14. Miscellaneous <pages/miscellaneous>
    15. Static Methods <pages/static-methods>
-   16. Inheritance <pages/inheritance>
 
 .. image:: https://img.shields.io/packagist/v/cajudev/collection.svg
    :target: https://packagist.org/packages/cajudev/collection

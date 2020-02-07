@@ -1,36 +1,23 @@
-===========================
-13. Operações com Conjuntos
-===========================
+==================
+13. Set Operations
+==================
 
-Todos os métodos descritos nesta seção seguem a seguinte lógica: Cada index do objeto equivale à um conjunto.
+All methods described in this section follows the following rule: **Each object's index is equivalent to a set of elements**
 
-O que significa que o objeto abaixo...
-
-.. code:: php
-
-   use Cajudev\Collection;
-
-   $collection = new Collection([
-       [1, 2, 3],
-       [3, 4, 5],
-   ]);
-
-... possui dois conjuntos de números inteiros.
-
-13.1 União
+13.1 Union
 ----------
 
-O método ``union()`` realiza a união entre todos os conjuntos do objeto. Valores repetidos são removidos.
+The ``union()`` method performs the union between all sets of the object. Repeated values ​​are removed.
 
 .. code:: php
 
    $collection->union(); // [1, 2, 3, 4, 5]
 
-13.2 Diferença
---------------
+13.2 Difference
+---------------
 
-O método ``diff()`` realiza a diferença entre todos os conjuntos do objeto. 
-A ordem dos conjuntos altera diretamente o valor final.
+The ``diff()`` method calculates the difference between all sets of the object.
+The order of the sets directly changes the final value.
 
 .. code:: php
 
@@ -48,10 +35,10 @@ A ordem dos conjuntos altera diretamente o valor final.
 
    $collection->diff(); // [4, 5]
 
-13.3 Diferença Total
---------------------
+13.3 Outer Difference
+---------------------
 
-O método ``outer()`` realiza a diferença total entre conjuntos.
+The ``outer()`` method makes the outer difference between sets.
 
 .. code:: php
 
@@ -62,10 +49,10 @@ O método ``outer()`` realiza a diferença total entre conjuntos.
 
    $collection->outer(); // [[1, 2], [4, 5]]
 
-13.4 Intersecção
-----------------
+13.4 Intersection
+-----------------
 
-O método ``intersect()`` realiza a intersecção entre todos os conjuntos do objeto.
+The ``intersect()`` method performs the intersection between all sets of the object.
 
 .. code:: php
 
@@ -76,10 +63,10 @@ O método ``intersect()`` realiza a intersecção entre todos os conjuntos do ob
 
    $collection->intersect(); // [3, 4]
 
-13.5 Produto cartesiano
------------------------
+13.5 Cartesian Product
+----------------------
 
-O método ``cartesian()`` realiza o produto cartesiano entre todos os conjuntos do objeto.
+The ``cartesian()`` method calculates the cartesian product between all sets of the object.
 
 .. code:: php
 

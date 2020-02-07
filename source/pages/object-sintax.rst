@@ -1,11 +1,11 @@
-====================
-5. Sintaxe de Objeto
-====================
+================
+5. Object Syntax
+================
 
-É possível manipular os valores do array interno dessa classe como se fossem propriedades.
+It is possible to manipulate the values ​​of the internal array of this class as if they were properties.
 
-5.1 Inserindo valores
----------------------
+5.1 Setting values
+------------------
 
 .. code:: php
 
@@ -28,7 +28,7 @@
          )
    */
 
-Apenas a palavra reservada ``length`` não pode ser utilizada por se tratar de um atributo somente leitura da classe.
+Only the reserved word ``length`` cannot be used because it is a read-only attribute of the class.
 
 .. code:: php
 
@@ -37,8 +37,8 @@ Apenas a palavra reservada ``length`` não pode ser utilizada por se tratar de u
    $collection = new Collection();
    $collection->length = 10; // InvalidArgumentException: length property is readonly
 
-5.2 Recebendo valores
----------------------
+5.2 Getting values
+------------------
 
 .. code:: php
 
@@ -52,10 +52,10 @@ Apenas a palavra reservada ``length`` não pode ser utilizada por se tratar de u
 
 .. note::
 
-   Não é obrigatório realizar a verificação com a função ``isset()`` ao acessar posições desta maneira,
-   pois internamente uma verificação é realizada e caso a posição não tenha sido inicializada o valor ``null`` é retornado.
+   It is not mandatory to perform a verification with the ``isset()`` function when accessing positions in this way, because internally a check is performed and if the position has not been 
+   initialized, the value ``null`` is returned.
 
-5.3 Verificando nulidade
+5.3 Checking null values
 ------------------------
 
 .. code:: php
@@ -70,8 +70,8 @@ Apenas a palavra reservada ``length`` não pode ser utilizada por se tratar de u
 
    echo isset($collection->ipsum); // false
 
-5.4 Removendo valores
----------------------
+5.4 Removing values
+-------------------
 
 .. code:: php
 
@@ -85,10 +85,10 @@ Apenas a palavra reservada ``length`` não pode ser utilizada por se tratar de u
 
    echo isset($collection->lorem); // false
 
-5.5 Sintaxe com chaves
-----------------------
+5.5 Brackets Sintax
+-------------------
 
-Propriedades em php não podem ser nomeadas com caracteres especiais como '.' ou '-'. Nesses casos é necessário observar a sintaxe a seguir.
+Properties in php cannot be named with special characters like '.' or '-'. In such cases it is necessary to observe the following syntax.
 
 .. code:: php
 
@@ -98,7 +98,7 @@ Propriedades em php não podem ser nomeadas com caracteres especiais como '.' ou
 
    $collection->lorem-ipsum = 'dolor'; // sintax error
 
-   $collection->{'lorem-ipsum'} = 'dolor'; // funciona corretamente
+   $collection->{'lorem-ipsum'} = 'dolor'; // works perfectly
 
    print_r($collection);
 
@@ -114,10 +114,10 @@ Propriedades em php não podem ser nomeadas com caracteres especiais como '.' ou
       )
    */
 
-5.6 Notação de ponto
---------------------
+5.6 Dot notation
+----------------
 
-É possível manipular dados de forma multidimensional utilizando a notação de ponto descrita na seção 6.
+It is possible to manipulate data in a multidimensional way using the dot notation described in section 6.
 
 .. code:: php
 

@@ -1,11 +1,24 @@
-=======================
-7. Notação de Intervalo
-=======================
+===================
+7. Interval Notation
+===================
 
-7.1 Acessando Valores
----------------------
+7.1 Setting values
+------------------
 
-É possível receber parte de um objeto Arrays, através da notação de intervalo.
+An fast way to initialize multiple positions in the array with a default value.
+
+.. code:: php
+
+   use Cajudev\Collection;
+
+   $collection = new Collection();
+   $collection['0:5'] = 'lorem';
+   echo $collection; // ["lorem","lorem","lorem","lorem","lorem","lorem"]
+
+7.2 Getting values
+------------------
+
+It is possible to receive a slice of a collection, using interval notation.
 
 .. code:: php
 
@@ -19,8 +32,8 @@
 
     echo $collection['2:5']; // {"two":2,"three":3,"four":4,"five":5}
 
-Caso você informe um valor inicial maior que o valor final, o resultado será
-um array inverso do intervalo definido. 
+If you enter an initial value greater than the final value, the result will be
+an array inverse of the defined range.
 
 .. code:: php
 
@@ -33,25 +46,11 @@ um array inverso do intervalo definido.
     ]);
 
     echo $collection['6:3']; // {"six":6,"five":5,"four":4,"three":3}
-    
 
-7.2 Inserindo Valores
----------------------
-
-Uma maneira fácil de inicializar várias posições no array com um valor padrão.
-
-.. code:: php
-
-   use Cajudev\Collection;
-
-   $collection = new Collection();
-   $collection['0:5'] = 'lorem';
-   echo $collection; // ["lorem","lorem","lorem","lorem","lorem","lorem"]
-
-7.3 Verificando Nulidade
+7.3 Checking null values
 ------------------------
 
-Verifique a existência de multiplas posições no array.
+Check the existence of multiple positions in the array.
 
 .. code:: php
 
@@ -65,10 +64,10 @@ Verifique a existência de multiplas posições no array.
    $collection->isset('0:5'); // false
    isset($collection['0:5']); // false
 
-7.4 Apagando Intervalos
------------------------
+7.4 Removing intervals
+----------------------
 
-Remova diversos valores do array.
+It's easy to remove a slice of the content.
 
 .. code:: php
 
