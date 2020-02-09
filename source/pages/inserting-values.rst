@@ -69,7 +69,7 @@ The ``unshift()`` method takes a variable number of arguments and is used to add
 2.3 Associating values ​​with keys
 --------------------------------
 
-The `` set () `` method is used to associate a value with a key.
+The ``set()`` method is used to associate a value with a key.
 It also supports the dot notation described in section 6.
 
 .. code:: php

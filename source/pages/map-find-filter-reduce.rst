@@ -46,15 +46,15 @@ The ``find`` method allows you to search for a especific element of a collection
     $collection = new Collection([
         [
             'lorem' => 'ipsum',
-            'ipsum => 'sit',
+            'ipsum' => 'sit',
         ],
         [
             'lorem' => 'consectetur',
-            'ipsum => 'amet',
+            'ipsum' => 'amet',
         ],
         [
             'lorem' => 'lorem',
-            'ipsum => 'dolor',
+            'ipsum' => 'dolor',
         ]
     ]);
 
@@ -125,7 +125,7 @@ The second parameter defines when the injected value will be an array or an coll
 The ``reduce`` method allows you to reduce the object by a single value. It receives by parameter a callback function to be executed,
 and always receive two arguments, the first is the previous value and the second is the current value.
 
-Unlike the traditional implementation, the initial value provided will be the **first element of the array** and not `` null`` as usual.
+Unlike the traditional implementation, the initial value provided will be the **first element of the array** and not ``null`` as usual.
 
 .. code:: php
 

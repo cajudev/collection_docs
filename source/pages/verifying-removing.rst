@@ -18,7 +18,7 @@ To check when a key is not null, you can use the ``isset()`` method.
 
 .. hint::
 
-   In all methods on this page, you can apply the use of dot notation,
+   In all methods on this page, you can apply the use of dot notation, 
    explained in section 6, as in the example below:
 
 .. code:: php
