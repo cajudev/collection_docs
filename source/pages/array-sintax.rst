@@ -51,10 +51,10 @@ To access a previously set key, just do as usual:
    echo $collection['lorem']; // ipsum
    echo $collection['sit']['amet']; // consectetur
 
-Unlike the ``get`` method that returns ``null`` in cases of non-existent key,
+Unlike the ``get`` method that returns ``null`` in cases of non-existing key,
 the array syntax requires a little care.
 
-If you try to access a non-existent position, that position will be initialized as an array.
+If you try to access a non-existing position, that position will be initialized as an array.
 This occurs to allow chained access with this sintax.
 
 .. code:: php

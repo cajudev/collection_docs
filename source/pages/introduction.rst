@@ -104,7 +104,7 @@ Note that the visibility of attributes does not affect parsing.
    use Cajudev\Collection;
 
    $object = new Class() {
-      protected $lorem  = 1;
+      private $lorem  = 1;
       protected $ipsum  = 2;
       public    $dolor  = 3;
    };
